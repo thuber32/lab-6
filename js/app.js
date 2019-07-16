@@ -1,18 +1,18 @@
 'use strict';
 
 var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM'];
-var pike = (23,65,6.3);
-var seaTac = (3,24, 1.2);
-var seattle = (11,38,3.7);
-var capitol = (20, 38, 2.3);
-var alki = (2, 16, 4.6);
+var pike = new Store ('Pike',23, 65, 6.3);
+var seaTac = new Store ('SeaTac',3, 24, 1.2);
+var seattle = new Store ('Seattle',11, 38, 3.7);
+var capitol = new Store ('Capitol',20, 38, 2.3);
+var alki = new Store ('Alki',2, 16, 4.6);
 var customersPerHour = [];
 var cookiesPerHour = [];
 var dailyLocationTotal = 0;
 var totalCookiesPerHour = 0;
-var location = []
+var name = name;
 
-function Store (location, minCustomer, maxCustomer, aveCookiePerSale) {
+function Store(location, minCustomer, maxCustomer, aveCookiePerSale) {
     this.location = location;
     this.minCustomer = minCustomer;
     this.maxCustomer = maxCustomer;
@@ -22,6 +22,7 @@ function Store (location, minCustomer, maxCustomer, aveCookiePerSale) {
 Store.prototype.customersPerHour() {
     for (var i = 0; i < hours.length; i++) {
         this.customersPerHour.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+    }
 }
 
 Store.prototype.calCookiesPerHour() {
@@ -32,14 +33,22 @@ Store.prototype.calCookiesPerHour() {
     }
 }
 
-var headerTable = function() {
-  
+Store.prototype.render() {
+    this.calCustomersPerHour();
+    this.calCookiesPerHour();
+    var tdEl = document.getElementById('pike');
+    for (var i = 0; i < hours.length; i++) {
+        var tdElNew = document.createElement('td');
+        tdElNew.textContent = this.cookiesPerHour[i] + ' cookies';
+        tdEl.appendChild(tdElNew);
+    }
 }
 
-var createTable = function(){
-    var sales = document.getElementsByID ('sales-results');
-    var 
+var header = function () {
+
 }
+
+
 
 /*
 var pike ={
@@ -205,4 +214,4 @@ var allStores = [pike, seaTac, seattle, capitol, alki];
     for (var i = 0; i < allStores.length; i++) {
         allStores[i].render();
     }
-})();
+})();*/
