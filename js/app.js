@@ -1,7 +1,48 @@
 'use strict';
 
-var hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
-var pike = {
+var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM'];
+var pike = (23,65,6.3);
+var seaTac = (3,24, 1.2);
+var seattle = (11,38,3.7);
+var capitol = (20, 38, 2.3);
+var alki = (2, 16, 4.6);
+var customersPerHour = [];
+var cookiesPerHour = [];
+var dailyLocationTotal = 0;
+var totalCookiesPerHour = 0;
+var location = []
+
+function Store (location, minCustomer, maxCustomer, aveCookiePerSale) {
+    this.location = location;
+    this.minCustomer = minCustomer;
+    this.maxCustomer = maxCustomer;
+    this.aveCookiePerSale = aveCookiePerSale;
+}
+
+Store.prototype.customersPerHour() {
+    for (var i = 0; i < hours.length; i++) {
+        this.customersPerHour.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+}
+
+Store.prototype.calCookiesPerHour() {
+    for (var i = 0; i < hours.length; i++) {
+        var hourlyCookies = Math.ceil(this.customersPerHour[i] * this.aveCookiePerSale); //need to round up cookies
+        this.cookiesPerHour.push(hourlyCookies);
+        this.dailyLocationTotal += hourlyCookies;
+    }
+}
+
+var headerTable = function() {
+  
+}
+
+var createTable = function(){
+    var sales = document.getElementsByID ('sales-results');
+    var 
+}
+
+/*
+var pike ={
     minCustomer: 23,
     maxCustomer: 65,
     aveCookiePerSale: 6.3,
