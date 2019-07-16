@@ -1,15 +1,34 @@
-body{
-    background-color: #413D33;
-    color: #CAB594;
+body {
+    background-color: #f2f2f2;
+    color: #646464;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-header{
-    
+
+header {
+    background-color: #646464;
+    color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    height: 300px;
 }
 
 nav {
-
+    overflow: hidden;
+    background-color: #8B0414;
 }
 
-article{
+a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    line-height: 1.5em;
+}
 
+section{
+    display: grid;
+    margin:20px 40px;
+    padding: 40px;
+    
 }
