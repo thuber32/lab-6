@@ -32,4 +32,26 @@ section{
     padding: 40px;
     box-sizing: border-box;
     box-shadow: 0px 1px 3px 0px #333;
+    font-weight: 800px;
 }
+
+table{
+    border: solid 2px #333;
+    padding: 5px;
+}
+
+td, th {
+    margin: 10px;
+    padding: 10px;
+    border: 0px;
+    border-bottom: solid 2px #333;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #7C7C7C;
+}
+
+/*tbody:after*/
+
+
+

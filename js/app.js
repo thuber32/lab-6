@@ -85,11 +85,16 @@ function finishTable(){
     var th= document.createElement('th');
     th.textContent = 'Total'; 
     tr.appendChild (th);
+    var sum = 0;
     for (var i = 0; i < hours.length; i++) {
         var tdEl= document.createElement('td');
         tdEl.textContent = totalCookiesPerHour[i];
+        sum += totalCookiesPerHour[i];
         tr.appendChild(tdEl);
     }
+    var tdEl= document.createElement('td');
+    tdEl.textContent = sum; 
+    tr.appendChild (tdEl);
 }
 
 (function renderAllStores() {
