@@ -1,8 +1,10 @@
 'use strict';
-
+//Data -----------------------------------------------------------------------------------------------------------------------------------------
 var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM'];
 var totalCookiesPerHour = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
+
+//Functionality ----------------------------------------------------------------------------------------------------------------------------------
 //constructor for creating 5 stores
 function Store(name, minCustomer, maxCustomer, aveCookiePerSale) {
     this.name = name;
@@ -12,17 +14,16 @@ function Store(name, minCustomer, maxCustomer, aveCookiePerSale) {
     this.customersPerHour = [];
     this.cookiesPerHour = [];
     this.dailyCookieTotal = 0;
-
 }
 
-//constructor to add the customers per hour to the store
+//add the customers per hour to the store
 Store.prototype.calCustomersPerHour = function() {
     for (var i = 0; i < hours.length; i++) {
         this.customersPerHour.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
     }
 }
 
-//constructor to add the cookies per hour to the store
+//add the cookies per hour to the store
 Store.prototype.calCookiesPerHour = function() {
     for (var i = 0; i < hours.length; i++) {
         var hourlyCookies = Math.ceil(this.customersPerHour[i] * this.aveCookiePerSale); //need to round up cookies
@@ -31,7 +32,7 @@ Store.prototype.calCookiesPerHour = function() {
     }
 }
 
-//constructor to run the two methods and append informtion to location
+//add to run the two methods and append informtion to location on the table
 Store.prototype.render= function() {
     this.calCustomersPerHour();
     this.calCookiesPerHour();
@@ -51,7 +52,7 @@ Store.prototype.render= function() {
         tdEl.textContent = this.dailyCookieTotal;
         tr.appendChild(tdEl);
 }
-
+//Executable ----------------------------------------------------------------------------------------------------------------------------------
 //creating stores with min, max and aveCookiePerSale
 var pike = new Store ('Pike',23, 65, 6.3);
 var seaTac = new Store ('SeaTac',3, 24, 1.2);
