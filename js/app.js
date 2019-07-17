@@ -38,13 +38,13 @@ Store.prototype.render= function() {
     this.calCookiesPerHour();
     var tableBody = document.getElementsByTagName('tbody')[0];
     var storeRow= document.createElement('tr');
-    tablebody.appendChild (storeRow);    //  is this where I should create new fuction (requirements are to separate function so each does one thing)
+    tableBody.appendChild (storeRow);    //  is this where I should create new fuction (requirements are to separate function so each does one thing)
     var storeName= document.createElement('td');
-    hourlyCookieSold.innerHTML = this.name; //prints the name of the store
+    storeName.innerHTML = this.name; //prints the name of the store
     storeRow.appendChild (storeName);
     for (var i = 0; i < hours.length; i++) {
         var hourlyCookieSold= document.createElement('td');
-        tdEl.textContent = this.cookiesPerHour[i];
+        hourlyCookieSold.textContent = this.cookiesPerHour[i];
         totalCookiesPerHour[i] += this.cookiesPerHour[i];
         storeRow.appendChild(hourlyCookieSold);
     }
@@ -54,38 +54,32 @@ Store.prototype.render= function() {
 }
 //Executable ----------------------------------------------------------------------------------------------------------------------------------
 
-//Grabs information from the form and stores in new variables
+//Grabs information from the form and stores in new variables, creates new stor and puts it onto the table
 function getData(event){
     event.preventDefault();
     var newStoreName = event.target.name.value;
-    var newStoreMinCustomer = parseFloat(event.target.name.value);
-    var newStoreMaxCustomer = parseFloat(event.target.name.value);
-    var newStoreAveCookies = parseFloat(event.target.name.value);
-    var newStore = [];
-    return 
+    var newStoreMinCustomer = parseFloat(event.target.minCustomer.value);
+    var newStoreMaxCustomer = parseFloat(event.target.maxCustomer.value);
+    var newStoreAveCookies = parseFloat(event.target.aveCookiePerSale.value);
+    var newStore = new Store(newStoreName, newStoreMinCustomer, newStoreMaxCustomer, newStoreAveCookies);
+    //add new store to list of all stores
+    allStores.push(newStore);
+    newStore.render();
+    finishTable();
 }
-//clear all and append
-var clearAll = "";
-clearAll.
 
-// var newStoreMin = getElementById('minCustomer');
-// var newStoreMax = getElementById('maxCustomer');
-// var newAveCookies = getElementById('aveCookiePerHour');
+//collect information from form
 var form = document.querySelector('form');
-
 form.addEventListener('submit', getData);
 
-//creating instance with min, max and aveCookiePerSale....should have 5
+//creating instance with min, max and aveCookiePerSale
 var pike = new Store ('Pike',23, 65, 6.3);
 var seaTac = new Store ('SeaTac',3, 24, 1.2);
 var seattle = new Store ('Seattle', 11, 38, 3.7);
 var capitol = new Store ('Capitol Hill', 20, 38, 2.3);
 var alki = new Store ('Alki', 2, 16, 4.6);
 
-//call information from form into instance
-
-var allStores = [pike, seaTac, seattle, capitol, alki];
-
+//creating the header of the table
 function setUpTable(){
     var thead = document.getElementsByTagName('thead')[0];
     var timeRow= document.createElement('tr');
@@ -103,25 +97,30 @@ function setUpTable(){
         timeRow.appendChild(dailyLocationTotal);
 }
 
+//creating the footer of the table
 function finishTable(){
     var tfoot = document.getElementsByTagName('tfoot')[0];
-    var tr= document.createElement('tr');
-    tfoot.appendChild (tr);
-    var th= document.createElement('th');
-    th.textContent = 'Total'; 
-    tr.appendChild (th);
+    tfoot.innerHTML = '';
+    var totalHourlyRow= document.createElement('tr');
+    tfoot.appendChild (totalHourlyRow);
+    var total= document.createElement('th');
+    total.textContent = 'Total'; 
+    totalHourlyRow.appendChild (total);
     var sum = 0;
     for (var i = 0; i < hours.length; i++) {
-        var tdEl= document.createElement('td');
-        tdEl.textContent = totalCookiesPerHour[i];
+        var sumPerHour= document.createElement('td');
+        sumPerHour.textContent = totalCookiesPerHour[i];
         sum += totalCookiesPerHour[i];
-        tr.appendChild(tdEl);
+        totalHourlyRow.appendChild(sumPerHour);
     }
-    var tdEl= document.createElement('td');
-    tdEl.textContent = sum; 
-    tr.appendChild (tdEl);
+    var finalSum= document.createElement('td');
+    finalSum.textContent = sum; 
+    totalHourlyRow.appendChild (finalSum);
 }
+// creating an array for all stores
+var allStores = [pike, seaTac, seattle, capitol, alki];
 
+//rendering all the stores info onto the table 
 (function renderAllStores() {
     setUpTable();
     for (var i = 0; i < allStores.length; i++) {

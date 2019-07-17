@@ -60,11 +60,11 @@ label{
     font-size: 1rem;
 }
 
-input [text]{
+input [type=text]{
    padding: 10px;
 }
 
-input [submit]{
+input [type=submit]{
     background: #8B0414;
     padding: 10px;
 }
