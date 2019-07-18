@@ -1,45 +1,125 @@
+html, body, header{
+   margin: 0;
+   padding: 0;
+}
+
 body {
-    background-color: #f2f2f2;
-    color:black;
+    background-color: #e5e7ea;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
 
-header {
-    background-color: #8B0414;
-    color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    height: 300px;
+body,
+.site-header,
+footer{
+    box-sizing: border-box;
+    padding: 0 30px;
+}
+
+.clearfix{
+    clear: both;
+    overflow: hidden;
+}
+
+.site-header {
+    background-color: #333;
+    padding: 0 15px;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    margin: 0;
+    display: block;
+}
+
+.site-header h1 {
+    color: #db8c3f;
+    text-shadow: 2px 2px 2px #666;
+    float:left;
+    font-weight: bold;
+    margin: 60px 0px 0px 0px;
+}
+
+.site-header h2{
+    float:left;
+    font-size: 0.8rem;
+}
+
+.site-header a {
+    display: inline-block;
+    color:#e5e7ea;
+    padding: 5px 15px;
+    line-height: 1.5em;
 }
 
 nav {
     overflow: hidden;
     background-color: #333;
+    margin-top: 60px;
+    text-align: right;
 }
 
-a {
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
     display: inline-block;
-    color: #f2f2f2;
+    margin: 60px 0;
+    text-decoration: none;
+}
+
+h2 {
     text-align: center;
-    padding: 14px 16px;
-    line-height: 1.5em;
+    border-bottom: solid 
 }
 
 section{
-    display: grid;
-    margin:20px 40px;
-    padding: 40px;
-    box-sizing: border-box;
-    box-shadow: 0px 1px 3px 0px #333;
-    font-weight: 800px;
+    margin:15px 30px;
+    padding: 30px;
+    box-shadow: 0px 1px 5px 0px #333;
+    display: block;
+}
+
+.left-side{
+    float: left;
+    width: calc(100% - 200px)
+}
+
+.right-side{
+    float: right;
+}
+
+article {
+    position: inline-block;
+    color: #333;
+    min-width: 200px;
+    float: left;
+
+}
+
+img {
+    wid min: 100px;
+    width: 30%;
 }
 
 fieldset{
     padding: 10px;
     max-width: 500px;
     margin: 10px auto;
+}
+
+.content-gallery {
+    position: inline-block;
+
+}
+
+.content-gallery img {
+    border-image-width: 5px;
+    max-width: 100%;
+    border-radius: 5px;
+    float: left;
 }
 /*.legend {
     color: black;
@@ -61,12 +141,14 @@ label{
 }
 
 input [type=text]{
-   padding: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 input [type=submit]{
     background: #8B0414;
-    padding: 10px;
+    padding: 10px 30px;
+    color: white;
 }
 
 table{
@@ -90,7 +172,3 @@ tr:nth-child(2n+1) {
 #data{
     text-align: center;
 }
-
-/*tbody{
-
-}*/
