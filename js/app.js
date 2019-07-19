@@ -40,7 +40,7 @@ Store.prototype.render= function() {
     var storeRow= document.createElement('tr');
     tableBody.appendChild (storeRow);    //  is this where I should create new fuction (requirements are to separate function so each does one thing)
     var storeName= document.createElement('td');
-    storeName.innerHTML = this.name; //prints the name of the store
+    storeName.innerText = this.name; //prints the name of the store
     storeRow.appendChild (storeName);
     for (var i = 0; i < hours.length; i++) {
         var hourlyCookieSold= document.createElement('td');
@@ -85,7 +85,7 @@ function setUpTable(){
     var timeRow= document.createElement('tr');
     thead.appendChild (timeRow);
     var blankCell= document.createElement('th');
-    blankCell.innerHTML = '&nbsp;'; //creates a non breaking space (empty box)
+    blankCell.innerText = '&nbsp;'; //creates a non breaking space (empty box)
     timeRow.appendChild (blankCell);
     for (var i = 0; i < hours.length; i++) {
         var time= document.createElement('th');
@@ -100,7 +100,7 @@ function setUpTable(){
 //creating the footer of the table
 function finishTable(){
     var tfoot = document.getElementsByTagName('tfoot')[0];
-    tfoot.innerHTML = '';
+    tfoot.innerText = '';
     var totalHourlyRow= document.createElement('tr');
     tfoot.appendChild (totalHourlyRow);
     var total= document.createElement('th');
