@@ -1,6 +1,6 @@
 'use strict';
 //Data -----------------------------------------------------------------------------------------------------------------------------------------
-var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM'];
+var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM'];
 var totalCookiesPerHour = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 
@@ -40,7 +40,7 @@ Store.prototype.render= function() {
     var storeRow= document.createElement('tr');
     tableBody.appendChild (storeRow);    //  is this where I should create new fuction (requirements are to separate function so each does one thing)
     var storeName= document.createElement('td');
-    storeName.innerHTML = this.name; //prints the name of the store
+    storeName.innerText = this.name; //prints the name of the store
     storeRow.appendChild (storeName);
     for (var i = 0; i < hours.length; i++) {
         var hourlyCookieSold= document.createElement('td');
@@ -85,22 +85,22 @@ function setUpTable(){
     var timeRow= document.createElement('tr');
     thead.appendChild (timeRow);
     var blankCell= document.createElement('th');
-    blankCell.innerHTML = '&nbsp;'; //creates a non breaking space (empty box)
+    blankCell.innerText = ''; //creates a non breaking space (empty box)
     timeRow.appendChild (blankCell);
     for (var i = 0; i < hours.length; i++) {
         var time= document.createElement('th');
         time.textContent = hours[i];
         timeRow.appendChild(time);
     }
-    var dailyLocationTotal= document.createElement('th');
-        dailyLocationTotal.textContent = 'Daily Location Total';
-        timeRow.appendChild(dailyLocationTotal);
+    var dailyTotal= document.createElement('th');
+        dailyTotal.textContent = 'Daily Total';
+        timeRow.appendChild(dailyTotal);
 }
 
 //creating the footer of the table
 function finishTable(){
     var tfoot = document.getElementsByTagName('tfoot')[0];
-    tfoot.innerHTML = '';
+    tfoot.innerText = '';
     var totalHourlyRow= document.createElement('tr');
     tfoot.appendChild (totalHourlyRow);
     var total= document.createElement('th');
