@@ -9,51 +9,71 @@
 </head>
 
 <body>
-    <header>
-        <h1><img src="img/fish-145106_1280.png" alt="Pete's Salmon Cookies" width="300px" id="logo-cup" />
-            <img src="img/petes logo red.png" width="600px" id="logo-name" />
-        </h1>
+    <div class="clearfix"></div>
+    <header class="site-header">
+        <div id="logo">
+            <div class="logo-text">
+                <h1>Fishin' For Cookies</h1>
+                <h3>You'll be hooked</h3>
+            </div>
+        </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="#pike">1st & Pike</a>
-            <a href="#seaTac">Seatac Airport</a>
-            <a href="#seattle">Seattle Center</a>
-            <a href="#capitol">Capitol Hill</a>
-            <a href="#alki">Alki</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="online-store.html">Online Store</a></li>
+                <li><a href="about-us.html">About</a></li>
+            </ul>
         </nav>
     </header>
+    <div class="main-pic">
+        <div class="store-front"><img src="img/store3update.png" />
+            <div class="overlay">
+                <h3>Store Hours</h3>
+                <p>
+                    <ul>
+                        <li>Mon-Thurs: 6AM - 6PM</li>
+                        <li>Friday: 6AM - 8PM</li>
+                        <li>Saturday: 8AM - 8PM</li>
+                        <li>Sunday: 8AM - 6PM</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
     <section class="form">
-        <h2>New Store</h2>
+        <h2 class="form-title">New Store</h2>
         <form>
             <fieldset class="store-name">
                 <legend class="legend">Store</legend>
-                  <h2>What is the location of the new store?</h2>
+                <h2>What is the location of the new store?</h2>
                 <div class="row">
                     <label for="name">Store Name</label>
                     <input type=" text" name="name" id="newName" placeholder="Enter Store Name">
                 </div>
             </fieldset>
             <fieldset class="customer">
-                <h2>What is the location of the new store?</h2>
+                <h2>What are the minimum and maximum number of customers per hour?</h2>
                 <legend class="legend">Customer Information</legend>
-             <div class="store-minCustomer">
-                <label for="minCustomer">Minimum Customers</label>
-                <input type="text" name="minCustomer" id="minCustomer" placeholder="Enter Number Here">
-             </div>
-              <div class="store-maxCustomer">
-                <label for="maxCustomer">Maximum Customers</label>
-                <input type="text" name="maxCustomer" id="newMaxCustomer" placeholder="Enter Number Here">
-              </div>
+                <div class="store-minCustomer">
+                    <label for="minCustomer">Minimum Customers</label>
+                    <input type="text" name="minCustomer" id="minCustomer" placeholder="Enter Number Here">
+                </div>
+                <div class="store-maxCustomer">
+                    <label for="maxCustomer">Maximum Customers</label>
+                    <input type="text" name="maxCustomer" id="newMaxCustomer" placeholder="Enter Number Here">
+                </div>
             </fieldset>
             <fieldset class="store-aveCookiePerSale">
                 <legend class="legend">Cookies</legend>
-              <div class="row">
-                <label for="aveCookiePerSale">Average Number of Cookies</label>
-                <input type="text" name="aveCookiePerSale" id="newAveCookiePerSale" placeholder="Enter Number Here">
-              </div>
+                <div class="row">
+                    <label for="aveCookiePerSale">Average Number of Cookies</label>
+                    <input type="text" name="aveCookiePerSale" id="newAveCookiePerSale" placeholder="Enter Number Here">
+                </div>
             </fieldset>
             <div class="button">
-            <input type="submit" name="submit">
+                <input type="submit" name="submit">
             </div>
         </form>
     </section>
