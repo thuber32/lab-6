@@ -31,10 +31,10 @@
         <h3>Store Hours</h3>
         <p>
           <ul>
-              <li>Mon-Thurs: 6AM - 6PM</li>
-              <li>Friday:    6AM - 8PM</li>
-              <li>Saturday:  8AM - 8PM</li>
-              <li>Sunday:    8AM - 6PM</li>
+            <li>Mon-Thurs: 6AM - 6PM</li>
+            <li>Friday: 6AM - 8PM</li>
+            <li>Saturday: 8AM - 8PM</li>
+            <li>Sunday: 8AM - 6PM</li>
           </ul>
         </p>
       </div>
@@ -53,35 +53,93 @@
         <h3>Red Snapper Cookies</h3>
         <p>
           <img src="img/salmon.png" />
-        </p> <h4>Cost per dozen: $10.00</h4> <br>
+        </p>
+        <fieldset class="online-order">
+          <p>How many would you like to order?</p>
+          <label for="amount">Amount</label>
+          <input type="text" name="amount" />
+          <button type="button">Cart</button>
+          </fieldset>
       </div>
       <div class="columns-shopping">
-          <h3>Chinook Cookies</h3>
-          <img src="img/chinook.jpg"/>
+        <h3>Chinook Cookies</h3>
+        <p><img src="img/chinook.jpg" /></p>
+        <fieldset class="online-order">
+            <p>How many would you like to order?</p>
+            <label for="amount">Amount</label>
+            <input type="text" name="amount" />
+            <button type="button">Cart</button>
+        </fieldset>
       </div>
       <div class="columns-shopping">
         <h3>Clothing</h3>
-        <img src="img/shirt.jpg" width="450" />
+        <p><img src="img/shirt.jpg" width="450" /></p>
+        <fieldset class="online-order">
+            <p>How many would you like to order?</p>
+            <label for="amount">Amount</label>
+            <input type="text" name="amount" />
+            <button type="button">Cart</button>
+        </fieldset>
       </div>
       <div class="columns-shopping">
         <h3>Cookie Cutters</h3>
-        <img src="img/cutter.jpeg" />
+        <p><img src="img/cutter.jpeg" /></p>
+        <fieldset class="online-order">
+            <p>How many would you like to order?</p>
+            <label for="amount">Amount</label>
+            <input type="text" name="amount" />
+            <button type="button">Cart</button>
+        </fieldset>
       </div>
+      <div class="columns-shopping">
+          <h3>Scarf</h3>
+          <p><img src="img/fish.jpg" /></p>
+          <fieldset class="online-order">
+              <p>How many would you like to order?</p>
+              <label for="amount">Amount</label>
+              <input type="text" name="amount" />
+              <button type="button">Cart</button>
+          </fieldset>
+        </div>
     </article>
   </section>
 </body>
 <footer>
-  <div class="columns">
-    <header>
-      <h2>Contact</h2>
-    </header>
-    <p>
-      <i class="fas fa-phone">319-364-0123 </i>
-    </p>
-    <p><i class="fas fa-map-marker-alt">415 12th Ave <br>Cedar Rapids, IA 52401</i></p>
-    <p><i class="far fa-envelope"></i>info@salmoncookies</p>
-  </div>
-  <script src="js/app.js"></script>
-</footer>
+  <footer>
+    <article class="footer-info">
+      <header>
+        <h2>Store Hours</h2>
+      </header>
+      <p>
+        <ul>
+          <li>Mon-Thurs: 6AM - 6PM</li>
+          <li>Friday: 6AM - 8PM</li>
+          <li>Saturday: 8AM - 8PM</li>
+          <li>Sunday: 8AM - 6PM</li>
+        </ul>
+      </p>
+    </article>
+    <article class="footer-info">
+      <header>
+        <h2>Contact</h2>
+      </header>
+      <p>
+        319-364-0123
+      </p>
+      <p>415 12th Ave <br>Cedar Rapids, IA 52401 </p>
+      <p>info@salmoncookies</p>
+    </article>
+    <article class="footer-info">
+      <header>
+        <h2>Social Media</h2>
+      </header>
+      <p>
+        Facebook link
+      </p>
+      <p>Twitter <br>
+        @fishin'forcookies </p>
+    </article>
+    <script src="js/app.js"></script>
+  </footer>
 
 </html>
