@@ -143,12 +143,6 @@ a:active {
     color: inherit;
 }
 
-/*
-article{
-    position: relative;
-    border-bottom: solid 1px #dfccbe;
-}
-*/
 .welcome{
     width:100%;
     display: inline-block;
@@ -317,6 +311,41 @@ th, td:first-child, th:first-child{
     text-align: center;
 }
 
+#store1, 
+#store2, 
+#store3,
+#store4,
+#store5,
+#store6 {
+    background-size: cover;
+    background-position: center center;
+    min-height: 175px;
+    padding:5px;
+}
+
+#store1{
+    background-image: url(../img/salmonstore1.jpg);
+}
+
+#store2{
+    background-image: url(../img/salmonstoreairport.jpg);
+}
+
+#store3{
+    background-image: url(../img/store3update.png);
+}
+
+#store1{
+    background-image: url(../img/salmonstore4.jpg);
+}
+
+#store1{
+    background-image: url(../img/salmonstore6.jpg);
+}
+
+#store1{
+    background-image: url(../img/store.jpg);
+}
 footer {
     width: 100%;
     background-color: #333;
