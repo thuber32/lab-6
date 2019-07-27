@@ -100,7 +100,7 @@ nav a{
     position: absolute;
     bottom: 75px;
     right: 0;
-    width:30%;
+    width:25%;
     line-height: 2rem;
     font-size: 1.5rem;
     color: #e5e7ea;
@@ -152,7 +152,7 @@ a:active {
     line-height: 1.5rem;
 }
 
-.welcome p, h3{
+.welcome p, h3, #storeLocations p{
     margin: 15px;
     padding: 0px 90px;
 }
@@ -182,7 +182,7 @@ a:active {
 }
 
 
-.welcome h2, .form-title, .left-side h2{
+.welcome h2, .form-title, .left-side h2, #storeLocations h2{
     margin: 0;
     text-align: center;
     padding: 0px 30px 30px;
@@ -211,6 +211,13 @@ a:active {
     width: 33%
 }
 
+#storeLocations h2 {
+    padding: 30px;
+}
+
+#storeLocations p{
+    font-size: 1.5rem;
+}
 .columns img{
     border: 1px solid #666;
     border-radius: 4px;
@@ -234,6 +241,7 @@ a:active {
     width: 40%;
     overflow:hidden;
     position: relative;
+    box-shadow: 0px 1px 5px 0px #333;
 }
 
 .column-shopping img, .columns h3, .column-shopping p{
@@ -335,15 +343,15 @@ th, td:first-child, th:first-child{
     background-image: url(../img/store3update.png);
 }
 
-#store1{
+#store4{
     background-image: url(../img/salmonstore4.jpg);
 }
 
-#store1{
+#store5{
     background-image: url(../img/salmonstore6.jpg);
 }
 
-#store1{
+#store6{
     background-image: url(../img/store.jpg);
 }
 
